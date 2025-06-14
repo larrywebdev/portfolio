@@ -1,0 +1,150 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  letter-spacing: 0.5px;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+.hero-section {
+  background: url("images/andrew-kliatskyi-2bfHAKhGn4g-unsplash.jpg")
+    center/cover no-repeat;
+  height: 100vh;
+}
+.logo,
+.logo:visited {
+  color: white;
+}
+.nav-links {
+  background-color: #000000ba;
+  height: 100vh;
+  width: 80vw;
+  max-width: 300px;
+  position: fixed;
+  top: 0;
+  right: -450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: 0.3s ease;
+}
+.nav-links.active {
+  right: 0;
+}
+
+.nav-links ul {
+  list-style: none;
+  padding: 0;
+  align-items: center;
+  gap: 20px;
+}
+.nav-links a {
+  color: #ffffff;
+  display: inline;
+}
+.hero {
+  color: #ffffff;
+}
+.cta-btn {
+  display: inline-block;
+  border: 1px solid #ffffff;
+  border-radius: 50px;
+  background-color: #000000;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.cta-btn:visited {
+  color: #ffffff;
+}
+
+@media (min-width: 320px) and (max-width: 479.9px) {
+  .cta-btn,
+  p {
+    font-size: 0.9rem;
+  }
+
+  .header {
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .hero h1 {
+    padding-top: 15px;
+    margin-top: 0;
+    border-top: 0.5px solid #ffffff;
+  }
+  .ham-menu {
+    height: 50px;
+    width: 40px;
+    position: relative;
+  }
+  .ham-menu span {
+    height: 3px;
+    width: 30px;
+    background-color: #ffffff;
+    border-radius: 25px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s ease;
+    z-index: 1;
+  }
+  .ham-menu span:nth-child(1) {
+    top: 25%;
+  }
+  .ham-menu span:nth-child(3) {
+    top: 75%;
+  }
+  .ham-menu.active span {
+    background-color: #ffffff;
+  }
+  .ham-menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  .ham-menu.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .ham-menu.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  .nav-links ul {
+    display: grid;
+  }
+
+  .hero {
+    padding: 0 10px;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 767.9px) {
+}
+
+@media (min-width: 768px) and (max-width: 1023.9px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+}
+
+/* off-screen-menu */
+
+/* ham menu */
