@@ -38,6 +38,7 @@ a {
   align-items: center;
   text-align: center;
   transition: 0.3s ease;
+  overflow-y: auto;
 }
 .nav-links.active {
   right: 0;
@@ -61,7 +62,7 @@ a {
   color: #ffffff;
   display: inline-block;
   border-radius: 50px;
-  background-color: #444444;
+  background-color: #000000;
   padding: 10px;
   margin-top: 20px;
 }
@@ -100,8 +101,15 @@ a {
   margin-top: 15px;
   align-items: center;
 }
-footer p {
+footer {
+  background-color: #000000;
+  color: #ffffff;
+  margin-top: 20px;
   text-align: center;
+  padding: 30px 0;
+}
+footer p {
+  margin: 0;
   font-size: 12px;
 }
 @media (max-width: 479.9px) {
@@ -169,8 +177,7 @@ footer p {
   .resume-section,
   .project-section,
   .about-section,
-  .contact-section,
-  footer {
+  .contact-section {
     padding: 30px 10px 0;
   }
   .resume h2,
