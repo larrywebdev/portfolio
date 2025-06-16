@@ -3,6 +3,9 @@
 *::after {
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
@@ -57,18 +60,18 @@ a {
 .cta-btn {
   color: #ffffff;
   display: inline-block;
-  border: 1px solid #ffffff;
   border-radius: 50px;
-  background-color: #000000;
+  background-color: #444444;
   padding: 10px;
   margin-top: 20px;
 }
 .cta-btn:active {
-  transform: scale(0.9);
-  transition: 0.2s ease-in-out;
+  transform: scale(0.95);
 }
 .resume h2,
-.project h2 {
+.project h2,
+.about h2,
+.contact h2 {
   margin: 0;
   border-bottom: 0.5px solid #000000;
 }
@@ -76,8 +79,32 @@ a {
   list-style: none;
   padding: 0;
 }
-
-@media (min-width: 320px) and (max-width: 479.9px) {
+.resume-link {
+  color: #000000;
+  text-decoration: underline;
+}
+.project-link h3 {
+  margin-bottom: 0;
+  color: #000000;
+}
+.project-link h3 {
+  margin-bottom: 0;
+  color: #000000;
+}
+.project-link h3:hover {
+  color: #0073ffb0;
+}
+.contact-svg {
+  display: flex;
+  gap: 20px;
+  margin-top: 15px;
+  align-items: center;
+}
+footer p {
+  text-align: center;
+  font-size: 12px;
+}
+@media (max-width: 479.9px) {
   .cta-btn,
   p {
     font-size: 0.9rem;
@@ -140,11 +167,16 @@ a {
     padding: 0 10px;
   }
   .resume-section,
-  .project-section {
+  .project-section,
+  .about-section,
+  .contact-section,
+  footer {
     padding: 30px 10px 0;
   }
   .resume h2,
-  .project h2 {
+  .project h2,
+  .about h2,
+  .contact h2 {
     padding: 10px 0;
   }
   .resume ul {
@@ -156,6 +188,12 @@ a {
   .skills {
     margin-top: 35px;
     margin-bottom: 0;
+  }
+  .project-img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    padding-top: 10px;
   }
 }
 
