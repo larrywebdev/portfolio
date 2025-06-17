@@ -17,35 +17,25 @@ body {
 a {
   text-decoration: none;
 }
+p {
+  font-size: 1rem;
+}
 .hero-section {
   background: url("images/andrew-kliatskyi-2bfHAKhGn4g-unsplash.jpg")
     center/cover no-repeat;
-  height: clamp(450px, 100vh, 500px);
+  min-height: 600px;
 }
 .logo,
 .logo:visited {
   color: white;
 }
-.nav-links {
-  background-color: #000000ba;
-  height: 100vh;
-  width: 80vw;
-  max-width: 300px;
-  position: fixed;
-  top: 0;
-  right: -450px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  transition: 0.3s ease;
-  overflow-y: auto;
+.header {
+  border-bottom: 0.5px solid #ffffff;
+  height: 60px;
+  margin: 0 10px;
 }
-.nav-links.active {
-  right: 0;
-}
-
 .nav-links ul {
+  display: flex;
   list-style: none;
   padding: 0;
   align-items: center;
@@ -54,19 +44,21 @@ a {
 .nav-links a {
   color: #ffffff;
   display: inline;
-  font-size: 20px;
+  font-size: 1rem;
 }
-.hero {
+.hero-text {
   color: #ffffff;
 }
 .cta-btn {
-  color: #ffffff;
+  color: #000000;
   display: inline-block;
   border-radius: 50px;
-  background-color: #000000;
+  background-color: #ffffff;
   padding: 10px;
   margin-top: 20px;
+  font-size: 1rem;
 }
+
 .cta-btn:active {
   transform: scale(0.95);
 }
@@ -74,7 +66,7 @@ a {
 .project-section h2,
 .about h2,
 .contact h2 {
-  margin: 0;
+  margin: 0 0 25px 0;
   border-bottom: 0.5px solid #000000;
 }
 .resume ul {
@@ -106,6 +98,7 @@ a {
   margin-top: 15px;
   align-items: center;
 }
+
 footer {
   background-color: #000000;
   color: #ffffff;
@@ -124,16 +117,14 @@ footer p {
   }
 
   .header {
-    padding: 0 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  .hero h1 {
+  .hero-text h1 {
     padding-top: 70px;
     margin-top: 0;
-    border-top: 0.5px solid #ffffff;
   }
   .ham-menu {
     height: 50px;
@@ -172,9 +163,31 @@ footer p {
     top: 50%;
     transform: translate(-50%, -50%) rotate(-45deg);
   }
+
+  .nav-links {
+    background-color: #000000ba;
+    height: 100vh;
+    width: 80vw;
+    max-width: 300px;
+    position: fixed;
+    top: 0;
+    right: -450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: 0.3s ease;
+    overflow-y: auto;
+  }
+  .nav-links.active {
+    right: 0;
+  }
   .nav-links ul {
     display: grid;
     margin-top: 70px;
+  }
+  .nav-links a {
+    font-size: 20px;
   }
   .hero {
     padding: 0 10px;
@@ -185,21 +198,9 @@ footer p {
   .contact-section {
     padding: 30px 10px 0;
   }
-  .resume h2,
-  .project-section h2,
-  .about h2,
-  .contact h2 {
-    padding: 10px 0;
-  }
+
   .resume ul {
     font-size: 0.9rem;
-  }
-
-  .experience,
-  .education,
-  .skills {
-    margin-top: 35px;
-    margin-bottom: 0;
   }
   .project-container {
     display: grid;
@@ -216,22 +217,15 @@ footer p {
 }
 
 @media (min-width: 480px) and (max-width: 767.9px) {
-  .cta-btn,
-  p {
-    font-size: 1rem;
-  }
-
   .header {
-    padding: 0 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  .hero h1 {
+  .hero-text h1 {
     padding-top: 70px;
     margin-top: 0;
-    border-top: 0.5px solid #ffffff;
   }
   .ham-menu {
     height: 50px;
@@ -270,10 +264,33 @@ footer p {
     top: 50%;
     transform: translate(-50%, -50%) rotate(-45deg);
   }
+
+  .nav-links {
+    background-color: #000000ba;
+    height: 100vh;
+    width: 80vw;
+    max-width: 300px;
+    position: fixed;
+    top: 0;
+    right: -450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: 0.3s ease;
+    overflow-y: auto;
+  }
+  .nav-links.active {
+    right: 0;
+  }
+  .nav-links a {
+    font-size: 20px;
+  }
   .nav-links ul {
     display: grid;
     margin-top: 70px;
   }
+
   .hero {
     padding: 0 10px;
   }
@@ -283,24 +300,12 @@ footer p {
   .contact-section {
     padding: 30px 10px 0;
   }
-  .resume h2,
-  .project-section h2,
-  .about h2,
-  .contact h2 {
-    padding: 10px 0;
-  }
+
   .resume ul {
     font-size: 0.9rem;
   }
-
-  .experience,
-  .education,
-  .skills {
-    margin-top: 35px;
-    margin-bottom: 0;
-  }
   .project-container {
-    overflow-y: scroll;
+    overflow-x: scroll;
   }
   .project-img img {
     width: 300px;
@@ -311,14 +316,84 @@ footer p {
 }
 
 @media (min-width: 768px) and (max-width: 1023.9px) {
+  .hero-text {
+    padding: 0 50px;
+    width: 500px;
+  }
   .header {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding: 0 40px;
+  }
+
+  .hero-text h1 {
+    padding-top: 70px;
+    margin-top: 0;
+  }
+  .resume-section,
+  .project-section,
+  .about-section,
+  .contact-section {
+    padding: 30px 30px 0;
+  }
+
+  .resume ul {
+    font-size: 0.9rem;
+  }
+
+  .project-container {
+    overflow-x: scroll;
+  }
+  .project-img img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
   }
 }
 
 @media (min-width: 1024px) {
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 30px;
+  }
+  .hero {
+    max-width: 1500px;
+    padding: 0 30px;
+    margin: auto;
+  }
+  .hero-text {
+    width: 500px;
+  }
+  .hero-text h1 {
+    padding-top: 70px;
+    margin-top: 0;
+  }
+  .resume-section,
+  .project-section,
+  .about-section,
+  .contact-section {
+    padding: 30px 30px 0;
+  }
+
+  .resume ul {
+    font-size: 0.9rem;
+  }
+
+  .project-img img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .resume-section,
+  .project-section,
+  .about-section,
+  .contact-section {
+    max-width: 1500px;
+    margin: auto;
+  }
 }
 
 /* off-screen-menu */
