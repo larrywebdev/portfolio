@@ -232,6 +232,7 @@ footer p {
     height: 50px;
     width: 40px;
     position: relative;
+    cursor: pointer;
   }
   .ham-menu span {
     height: 3px;
@@ -396,7 +397,3 @@ footer p {
     margin: auto;
   }
 }
-
-/* off-screen-menu */
-
-/* ham menu */
